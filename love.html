@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: pink;
+            margin-top: 150px;
+        }
+
+        h1 {
+            color: #ff1493;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #yes {
+            background: #4CAF50;
+            color: white;
+        }
+
+        #no {
+            background: #ff4444;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💖 Do You Love Me? 💖</h1>
+
+    <button id="yes" onclick="answerYes()">Yes ❤️</button>
+    <button id="no">No 💔</button>
+
+    <script>
+        const noBtn = document.getElementById("no");
+
+        noBtn.addEventListener("mouseover", () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+
+        function answerYes() {
+            document.body.innerHTML = `
+                <h1 style="color:#ff1493; margin-top:150px;">
+                    ❤️ Yay! I Love You Too! ❤️
+                </h1>
+            `;
+        }
+    </script>
+
+</body>
+</html>
